@@ -1,0 +1,31 @@
+servicecodeinfo
+===============
+
+This C program analyzes one or more service codes (see RFC 4340), provided
+numerically or as strings, and prints their allocation classes.
+
+Sample usage
+============
+
+% ./servicecodeinfo
+Usage: servicecodeinfo NUMBER [NUMBER...]
+   or: servicecodeinfo -n NAME [NAME...]
+% ./servicecodeinfo 5 1717858426 0x48545450
+Service Code           ASCII   Allocation Policy
+---------------------- -----   ---------------------------------
+5                              First Come First Serve (FCFS)
+1717858426             fdpz    First Come First Serve (FCFS)
+1213486160             HTTP    Specification Required
+% ./servicecodeinfo -n fdpz RA
+Service Code           ASCII   Allocation Policy
+---------------------- -----   ---------------------------------
+1717858426             fdpz    First Come First Serve (FCFS)
+1379999776             RA      Specification Required
+
+Changelog
+=========
+
+2005-08-30 - Original program provided by Eddie Kohler <kohler@cs.ucla.edu>
+2013-09-17 - Converted into buildable package for posting and easy compilation
+             by Kim Davies <kim.davies@icann.org>
+
